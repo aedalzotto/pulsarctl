@@ -90,6 +90,11 @@ public:
 	*/
 	void set_brightness(uint8_t brightness);
 
+	/**
+	 * @brief Plays or pauses the backlight effect
+	*/
+	void toggle_effect();
+
 private:
 	/**
 	 * @brief Mode enumerator.

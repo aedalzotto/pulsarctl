@@ -44,6 +44,9 @@ int main(int argc, char *argv[])
 			case Cmdline::Subcommand::BRIGHTNESS:
 				pulsar->set_brightness(level.value());
 				break;
+			case Cmdline::Subcommand::PLAY_PAUSE:
+				pulsar->toggle_effect();
+				break;
 		}
 	} catch(std::invalid_argument const& e){
 		std::cerr << e.what() << std::endl;

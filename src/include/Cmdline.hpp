@@ -35,7 +35,8 @@ public:
 	enum class Subcommand {
 		BACKLIGHT,
 		KEYLIGHT,
-		BRIGHTNESS
+		BRIGHTNESS,
+		PLAY_PAUSE
 	};
 
 	Cmdline(int argc, char *argv[]);

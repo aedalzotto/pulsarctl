@@ -105,3 +105,17 @@ void Pulsar::set_brightness(uint8_t brightness)
 	if(hid_send_feature_report(handle, buffer.data(), buffer.size()) < 0)
 		throw std::runtime_error("Failed to write to device."); // std::string(hid_error(handle))
 }
+
+void Pulsar::toggle_effect()
+{
+	std::vector<uint8_t> buffer(65, 0x00);
+
+	buffer[4] = static_cast<uint8_t>(Mode::BACKLIGHT);
+	buffer[5] = 0x01;
+	buffer[7] = 0xFD;
+
+	buffer[63] = 0xF0;	// Checksum
+
+	if(hid_send_feature_report(handle, buffer.data(), buffer.size()) < 0)
+		throw std::runtime_error("Failed to write to device."); // std::string(hid_error(handle))
+}

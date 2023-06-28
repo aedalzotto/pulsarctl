@@ -84,9 +84,13 @@ Cmdline::Cmdline(int argc, char *argv[])
 		.scan<'u', uint8_t>()
 	;
 
+	argparse::ArgumentParser toggle_parser("play-pause");
+	toggle_parser.add_description("Play/pause backlight effect");
+
 	parser.add_subparser(backlight_parser);
 	parser.add_subparser(keylight_parser);
 	parser.add_subparser(brightness_parser);
+	parser.add_subparser(toggle_parser);
 
 	parser.parse_args(argc, argv);
 
@@ -102,6 +106,8 @@ Cmdline::Cmdline(int argc, char *argv[])
 		} else if(parser.is_subcommand_used("brightness")){
 			subcommand = Subcommand::BRIGHTNESS;
 			level.emplace(brightness_parser.get<std::uint8_t>("level"));
+		} else if(parser.is_subcommand_used("play-pause")){
+			subcommand = Subcommand::PLAY_PAUSE;
 		} else {
 			throw std::invalid_argument("No subcommand specified");
 		}

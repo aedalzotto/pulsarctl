@@ -12,8 +12,7 @@ pulsarctl = executable(
         dependency('argparse')
     ],
 	install : true,
-	install_dir: 'usr/bin'
 )
 
 # Install udev rules file
-install_data('60-pulsar.rules', install_dir: 'etc/udev/rules.d/')
+install_data('60-pulsar.rules', install_dir: '/etc/udev/rules.d/')

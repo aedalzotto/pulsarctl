@@ -25,5 +25,4 @@ meson install -C build
 
 - [ ] CustomerBreathing backlight
 - [ ] CustomerStatic backlight 
-- [ ] "Pause dynamic lighting effect" (play/pause effect)
 - [ ] "Equalizer" mode (music mode)

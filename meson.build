@@ -1,4 +1,4 @@
-project('pulsarctl', 'cpp', version: '1.0.0', default_options : ['cpp_std=c++17'])
+project('pulsarctl', 'cpp', version: '1.1.0', default_options : ['cpp_std=c++17'])
 
 # Define source files
 src_files = ['src/main.cpp', 'src/Pulsar.cpp', 'src/Cmdline.cpp']
